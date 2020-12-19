@@ -23,6 +23,7 @@ const (
 
 type options struct {
 	LogLevel string `long:"log-level" default:"info" description:"log level"`
+	TestAPIipport string `long:"listen" default:"0.0.0.0:8080" description:"host:port to bind to"`
 }
 
 func main() {
@@ -41,8 +42,7 @@ func main() {
 
 	go sandbox.Create()
 
-	testAPIipport := "0.0.0.0:8080"
-	startHTTPServer(testAPIipport, sandbox)
+	startHTTPServer(opts.TestAPIipport, sandbox)
 }
 
 func getCLIArgs() (options, []string) {
