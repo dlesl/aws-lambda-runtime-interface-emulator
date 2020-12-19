@@ -26,7 +26,7 @@ const (
 	defaultSigtermResetTimeoutMs = int64(2000)
 
 	defaultRuntimeAPIHost = "127.0.0.1"
-	defaultRuntimeAPIPort = 9001
+	defaultRuntimeAPIPort = 0
 )
 
 type Sandbox interface {
